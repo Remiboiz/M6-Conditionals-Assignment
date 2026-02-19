@@ -2,35 +2,28 @@ let randomNumber = Math.floor(Math.random() * 10) + 1;
 let userGuess;
 let attempts = 0;
 
-function startGame() {
-userGuess = prompt ("Guess a number between 1 and 10 (or type 999 to exit:");
 
-while (userGuess !== null) {
-    if (userGuess === "999"){
-        break;
-    }
-    let guess = Number(userGuess);
+userGuess = Number(prompt("Guess a number between 1 and 10 (or type 999 to exit:"));
 
-    if (isNaN(guess) || guess < 1 || guess > 10 || userGuess.trim() === "") {
-        userGuess = prompt("Invalid input. Please enter a valid number between 1 and 10:");
-    }
-    else if (guess === randomNumber) {
-        attempts++;
-        alert("Congratulations, You've guessed it in ${attempts} tries!!");
+while (userGuess !== randomNumber) {
+    if (userGuess === "999")
         break;
-    }
-    else {
-        attempts++;
-        if (guess < randomNumber) {
-            userGuess = prompt("Too low! Guess again:");
-        } else {
-            userGuess = prompt ("Too high! Guess again:");
-        }
-        }
-    }
 }
 
+attempts++;
 
+if (userGuess < randonNumber) {
+    userGuess = Number(prompt("Too low! Guess again:"));
+} else if (userGuess > randomNumber) {
+    userGuess = Number(prompt("Too high! Guess again:"));
+} else {
+    userGuess = Number(prompt("Invalid input! Please enter a number between 1 and 10:"));
+}
+
+if (userGuess === randomNumber) {
+    attempts++;
+    alert("Congratulations, you're guessed it in ${attempts} tries!");
+}
 
 
 
