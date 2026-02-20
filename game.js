@@ -5,14 +5,14 @@ let attempts = 0;
 
 userGuess = Number(prompt("Guess a number between 1 and 10 (or type 999 to exit:"));
 
-while (userGuess !== randomNumber) {
-    if (userGuess === "999")
+ while (userGuess !== randomNumber) {
+    if (userGuess === 999)
         break;
-}
+
 
 attempts++;
 
-if (userGuess < randonNumber) {
+if (userGuess < randomNumber) {
     userGuess = Number(prompt("Too low! Guess again:"));
 } else if (userGuess > randomNumber) {
     userGuess = Number(prompt("Too high! Guess again:"));
@@ -22,9 +22,10 @@ if (userGuess < randonNumber) {
 
 if (userGuess === randomNumber) {
     attempts++;
-    alert("Congratulations, you're guessed it in ${attempts} tries!");
-}
+    alert("Congratulations, you're guessed it in " + attempts + " tries!");
 
+}
+ }
 
 
 
